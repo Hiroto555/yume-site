@@ -1,0 +1,15 @@
+<svg width="600" height="600" viewBox="0 0 600 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for bottom curves -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Main background - transparent to show CSS background -->
+  <rect width="600" height="600" fill="transparent"/>
+  <!-- Bottom curved shape - dark blue -->
+  <path d="M 0 480 Q 150 420 300 440 Q 450 460 600 480 L 600 600 L 0 600 Z" fill="#1E3A8A"/>
+  <!-- Second layer curve - lighter blue -->
+  <path d="M 0 520 Q 200 480 400 500 Q 500 510 600 520 L 600 600 L 0 600 Z" fill="#3B82F6" opacity="0.7"/>
+</svg>

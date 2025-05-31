@@ -1,0 +1,118 @@
+/* FV section background */
+.fv {
+    position: relative;
+    background: url(images/青空.jpg) center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 559px) {
+    .fv {
+        background: url(images/青空.jpg) center/cover no-repeat;
+        background-attachment: scroll;
+        padding: 60px 0 20px;
+    }
+}
+
+/* Main Visual Module */
+.mv{background:#fff;overflow:hidden;position:relative}
+.mv:after{background:url(images/bg-mv-pc.svg) center calc(100% + 1px) no-repeat;background-size:100% auto;bottom:0;content:"";height:540px;left:0;pointer-events:none;position:absolute;width:100%}
+@media screen and (max-width:559px){.mv:after{background-size:cover;height:320px}}
+
+/* Swiper - Minimal Required */
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #000;
+    opacity: .2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--swiper-theme-color);
+}
+
+/* Header Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+}
+.headerNavi {
+    display: flex;
+    align-items: center;
+}
+.hidden-sp {
+    display: block;
+}
+.hidden-pc {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .hidden-sp { display: none; }
+    .hidden-pc { display: block; }
+}
+
+/* FV List Styles */
+.fvList__img {
+    position: relative;
+    overflow: hidden;
+}
+.fvList__wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+}
+.fvList__ttl {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.ratio {
+    position: relative;
+    overflow: hidden;
+}
+.ratio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

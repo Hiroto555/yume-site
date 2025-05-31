@@ -1,0 +1,5 @@
+<svg width="1920" height="540" viewBox="0 0 1920 540" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transparent background with bottom curve -->
+  <path d="M 0 480 Q 480 460 960 470 Q 1440 480 1920 500 L 1920 540 L 0 540 Z" fill="#ceb9a1" opacity="0.5"/>
+  <path d="M 0 500 Q 640 485 1280 495 Q 1600 500 1920 510 L 1920 540 L 0 540 Z" fill="#d4c4b0" opacity="0.8"/>
+</svg>

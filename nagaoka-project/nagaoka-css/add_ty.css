@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* IEハック用mixin */
+.unit-date-01 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: #808080;
+@media screen and (max-width: 414px) {
+  .unit-date-01 {
+    font-size: 1.3rem;
+  }
+}
+
+.unit-title-07 {
+  color: #131e27;
+  font-weight: bold;
+  font-family: "FOT-マティス Pro DB";
+  font-size: 1.6rem;
+  line-height: 1.625;
+  letter-spacing: 0.05em;
+@media screen and (max-width: 414px) {
+  .unit-title-07 {
+    font-size: 1.3rem;
+  }
+}
+
+.box-single-article-01 {
+  border-bottom: 1px solid #e6e6e6;
+.box-single-article-01:first-of-type {
+  border-top: 1px solid #e6e6e6;
+.box-single-article-01 a {
+  width: 100%;
+  padding: 25px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 70px;
+@media screen and (min-width: 769px) {
+  .box-single-article-01 a {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .box-single-article-01 a {
+    padding: 25px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.sec-archive-news.top {
+  padding-bottom: 150px;
+@media screen and (max-width: 414px) {
+  .sec-archive-news.top {
+    padding-bottom: 75px;
+  }
+}
+.sec-archive-news.under {
+  padding: 90px 0 150px;
+@media screen and (max-width: 414px) {
+  .sec-archive-news.under {
+    padding: 45px 0 80px;
+  }
+}
+
+.sec-archive-column {
+  padding-bottom: 100px;
+@media screen and (max-width: 414px) {
+  .sec-archive-column {
+    padding-bottom: 60px;
+  }
+}

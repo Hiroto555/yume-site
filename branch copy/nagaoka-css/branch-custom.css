@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 支店紹介ページ専用スタイル */
+
+/* 物件検索セクションを非表示 */
+.box-assessment-01,
+.ft-sec01 {
+    display: none !important;
+}
+
+/* 支店紹介セクション */
+.branch-sec01 {
+    padding: 30px 0 60px;
+    background: #f5f5f5;
+}
+@media screen and (min-width: 769px) {
+    .branch-sec01 {
+        padding: 75px 0 100px;
+    }
+}
+
+.branch-sec02 {
+    padding: 60px 0;
+}
+@media screen and (min-width: 769px) {
+    .branch-sec02 {
+        padding: 100px 0;
+    }
+}
+
+/* 支店情報カード */
+.voice-wrapper-01 {
+    margin-top: 30px;
+}
+@media screen and (min-width: 769px) {
+    .voice-wrapper-01 {
+        margin-top: 60px;
+    }
+}
+
+.voice-wrapper-01 .voice-inner {
+    margin-bottom: 40px;
+}
+@media screen and (min-width: 769px) {
+    .voice-wrapper-01 .voice-inner {
+        margin-bottom: 60px;
+    }
+}
+
+/* 支店情報の電話番号強調 */
+.tel-large {
+    color: #c41230;
+    font-size: 2.0rem;
+    font-weight: bold;
+    font-family: "Cormorant Garamond", serif;
+}
+@media screen and (max-width: 768px) {
+    .tel-large {
+        font-size: 1.8rem;
+    }
+}
+
+/* 支店画像ギャラリー */
+.voice-inner .img-wrap {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+    .voice-inner .img-wrap {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.voice-inner .img-wrap figure {
+    flex: 1;
+}
+
+.voice-inner .img-wrap img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+    .voice-inner .img-wrap img {
+        height: 150px;
+    }
+}
