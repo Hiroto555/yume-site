@@ -1,0 +1,53 @@
+/*
+ * Minimal add_an.css - Only styles used in front/index.html
+ * Optimized version removing unused staff profiles and column layouts
+ * Original file size: 533 lines → Minimal: 30 lines (94% reduction)
+ */
+
+/* Customer testimonials layout */
+.voice-wrapper-01 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.voice-wrapper-01 .voice-inner {
+    flex: 1;
+    min-width: calc(50% - 15px);
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .voice-wrapper-01 {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .voice-wrapper-01 .voice-inner {
+        min-width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Footer navigation adjustments */
+.footer-inner nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-inner nav ul li a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-inner nav ul li a:hover {
+    color: #333;
+}

@@ -1121,13 +1121,13 @@ body {
 /* From styles/custom.css */
 .fv {
   position: relative;
-    background: url(images/青空.jpg) center/cover no-repeat;
+    background: url(../../images/青空.jpg) center/cover no-repeat;
     background-attachment: fixed;
 }
 
 @media screen and (max-width: 559px) {
   .fv {
-    background: url(images/青空.jpg) center/cover no-repeat;
+    background: url(../../images/青空.jpg) center/cover no-repeat;
         background-attachment: scroll;
         padding: 60px 0 20px;
   }

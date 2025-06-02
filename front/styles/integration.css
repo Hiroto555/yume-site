@@ -1,0 +1,310 @@
+/* Integration CSS - CSS競合を解決するためのスタイル */
+
+/* 暗いスタイルの修正 - 全体的な背景とテキストカラー */
+body {
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* Open-America2セクションのスコープ化 */
+.open-section {
+    /* Open-America2のコンテンツをこのクラスでラップ */
+    background: transparent !important;
+}
+
+/* 青空背景の修正 */
+.open-section .fv {
+    background: url('../../images/青空.jpg') center/cover no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* .mainセクションの背景を明るく */
+.open-section .main {
+    background: transparent !important;
+}
+
+/* テキストカラーの明示的指定 */
+.open-section .fv__ttl {
+    color: #ffffff !important;
+}
+
+.open-section .fvList__ttl,
+.open-section .fvList__txt {
+    color: #ffffff !important;
+}
+
+/* モバイルでの背景調整 */
+@media screen and (max-width: 559px) {
+    .open-section .fv {
+        background-attachment: scroll !important;
+    }
+}
+
+/* ID競合の解決 */
+.open-section #open-header {
+    /* 元の#headerのスタイルはここに適用される */
+}
+
+/* nagaokaセクションの保護 */
+.nagaoka-section {
+    /* nagaokaのコンテンツをこのクラスでラップ */
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* 全体の明度修正 */
+body {
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* Open-America2セクションの背景透明化 */
+.open-section {
+    background: transparent !important;
+}
+
+.open-section .main {
+    background: transparent !important;
+}
+
+/* ヒーローセクションのテキストカラー調整 */
+.open-section .fv__ttl,
+.open-section .fvList__ttl,
+.open-section .fvList__txt {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Nagaokaセクションの保護 */
+.nagaoka-section {
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* レスポンシブ対応の調整 */
+@media (max-width: 768px) {
+    /* モバイル表示時の調整 */
+    .open-section .hidden-sp {
+        display: none !important;
+    }
+    
+    .open-section .hidden-pc {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    /* PC表示時の調整 */
+    .open-section .hidden-sp {
+        display: block !important;
+    }
+    
+    .open-section .hidden-pc {
+        display: none !important;
+    }
+}
+
+/* セクション間のマージン調整 */
+.open-section + .nagaoka-section {
+    margin-top: 0;
+}
+
+/* ヒーローセクションと不動産売却テキスト間の余白削除 */
+.open-section .main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.open-section .fv {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: auto !important;
+}
+
+/* レスポンシブでの余白も削除 */
+@media screen and (max-width: 1699px) {
+    .open-section .fv {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* 不動産売却セクションの余白削除と文字サイズ調整 */
+.nagaoka-section {
+    margin-top: -70px !important;
+}
+
+.nagaoka-section .top-sec01 {
+    padding-top: 15px !important;
+    padding-bottom: 30px !important;
+    margin-top: 0 !important;
+}
+
+.nagaoka-section .section-style-01 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 不動産売却セクションの文字を大きくして目立たせる */
+.nagaoka-section .top-sec01 .txt {
+    margin-top: 10px !important;
+}
+
+.nagaoka-section .top-sec01 .txt p {
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    color: #333 !important;
+}
+
+/* 「当社が選ばれる3つの理由」タイトルとコンテンツ間の余白調整 */
+.nagaoka-section .top-sec02 .unit-title-01 {
+    margin-bottom: 20px !important;
+}
+
+.nagaoka-section .top-sec02 .section-process-01 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* 「6つの魅力とサービス」タイトルとコンテンツ間の余白調整 */
+.nagaoka-section .top-sec03 .unit-title-01 {
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.nagaoka-section .top-sec03 .box-flex-01 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* 青いセクションの画像コラージュのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .nagaoka-section .top-sec04 .box-style-01 {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .nagaoka-section .top-sec04 .box-style-01 > div {
+        flex: none !important;
+        width: 100% !important;
+    }
+    
+    /* モバイルでは画像を少し小さく調整 */
+    .nagaoka-section .top-sec04 img {
+        transform: scale(0.8) !important;
+    }
+}
+
+/* 薄暗さとテキスト選択不可の修正 */
+
+/* オーバーレイ要素を無効化 */
+.open-section .slideMenu__overlay {
+    background: transparent !important;
+    pointer-events: none !important;
+    display: none !important;
+}
+
+/* テキスト選択を有効化 */
+.open-section * {
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+}
+
+/* pointer-eventsを正常化 - より包括的に */
+.open-section *,
+.open-section .swiper,
+.open-section .swiper-wrapper,
+.open-section .swiper-slide,
+.open-section .fvList,
+.open-section .fvList__item,
+.open-section .fvList__img,
+.open-section .fvList__wrap,
+.open-section .fv__ttl,
+.open-section .fvList__ttl,
+.open-section .fvList__txt,
+.open-section .fvList__btn {
+    pointer-events: auto !important;
+}
+
+/* 特定の非インタラクティブ要素のみpointer-events: noneを維持 */
+.open-section .fvList__img::before,
+.open-section .fvList__img::after,
+.open-section .slideMenu__overlay {
+    pointer-events: none !important;
+}
+
+/* opacity設定を正常化 */
+.open-section .slideIn,
+.open-section .slideIn--1s,
+.open-section .slideIn--2s,
+.open-section .slideIn--3s,
+.open-section .slideIn--4s,
+.open-section .slideIn--5s,
+.open-section .slideIn--6s,
+.open-section .slideIn--7s,
+.open-section .slideIn--8s,
+.open-section .slideIn--9s,
+.open-section .slideIn--10s {
+    opacity: 1 !important;
+}
+
+/* z-indexの調整 */
+.open-section .header {
+    z-index: 1000;
+}
+
+.nagaoka-section .box-header-01 {
+    z-index: 999;
+}
+
+/* 背景のオーバーレイ効果を削除 */
+.open-section .fv::before,
+.open-section .fv::after {
+    display: none !important;
+}
+
+/* アニメーション由来の透明度問題を修正 */
+.open-section .ratio {
+    opacity: 1 !important;
+}
+
+/* 全体的なアニメーションを無効化して表示を安定化 */
+.open-section * {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+}
+
+/* slideInアニメーションを強制的に完了状態に */
+.open-section .slideIn,
+.open-section [class*="slideIn"] {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    -webkit-transform: translateX(0) !important;
+}
+
+/* 全体の明度をさらに強化 */
+.open-section,
+.open-section .main,
+.open-section .fv {
+    background-color: transparent !important;
+}
+
+/* prefers-reduced-motionの影響を排除 */
+@media (prefers-reduced-motion: reduce) {
+    .open-section * {
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        opacity: 1 !important;
+    }
+}
