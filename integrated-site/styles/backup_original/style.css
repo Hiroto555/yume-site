@@ -1,0 +1,427 @@
+/* 物件一覧ページ専用スタイル - Design System準拠 */
+
+/* CSS Variables */
+:root {
+    --primary-color: #007bff;
+    --text-gray-500: #6b7280;
+    --border-radius-md: 16px;
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* フィルターセクション */
+.filter-section {
+    background: #f8f9fa;
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.filter-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filter-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.filter-item label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.filter-item select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+.filter-btn {
+    text-align: center;
+}
+
+.btn-search {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-search:hover {
+    background: #0056b3;
+}
+
+/* Property Grid Layout */
+.property-grid {
+    display: grid;
+    gap: 1.5rem; /* 24px */
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .property-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .property-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* PropertyCard Component */
+.property-card {
+    background: white;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Image Container with 4:3 Aspect Ratio */
+.property-image-container {
+    position: relative;
+}
+
+.property-image-aspect {
+    position: relative;
+    padding-top: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+}
+
+.property-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.05);
+}
+
+/* Property Badge */
+.property-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #6c757d;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.property-badge.new {
+    background: #28a745;
+}
+
+/* Favourite Button */
+.favourite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+.favourite-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.favourite-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Property Info */
+.property-info {
+    padding: 20px;
+}
+
+/* Typography - Headline */
+.property-headline {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* semibold */
+    margin-bottom: 8px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Typography - Subhead */
+.property-subhead {
+    font-size: 0.875rem; /* text-sm */
+    color: var(--text-gray-500);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* Typography - Price */
+.property-price {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* semibold */
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+/* Access Info */
+.property-access {
+    font-size: 0.875rem;
+    color: var(--text-gray-500);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* CTA Button */
+.property-cta {
+    margin-top: auto;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+    .btn-primary {
+        width: auto;
+        display: inline-block;
+        min-width: 120px;
+    }
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.page-btn:hover:not(.disabled) {
+    background: #0056b3;
+}
+
+.page-btn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.page-numbers a,
+.page-numbers .current {
+    display: inline-block;
+    padding: 10px 12px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.page-numbers a:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-numbers .current {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .page-numbers {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-section {
+        padding: 20px 15px;
+    }
+
+    .property-info {
+        padding: 15px;
+    }
+
+    .property-headline {
+        font-size: 1.125rem; /* text-lg */
+    }
+
+    .property-price {
+        font-size: 1.25rem; /* text-xl */
+    }
+}
+
+/* ナビゲーションでcurrentクラスのスタイル */
+.header-nav .current {
+    color: #007bff !important;
+    font-weight: bold;
+}
+
+/* 物件一覧セクションのスタイル調整 */
+.real-estate-sec01 {
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.real-estate-sec02 {
+    padding: 0;
+}
+
+.real-estate-sec03 {
+    padding: 40px 0;
+}
+
+/* 既存のunit-title-01スタイルに合わせる */
+.unit-title-01 .sub {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.unit-title-01 .main {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* セクションのテキストスタイル */
+.section-style-01 .txt {
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.section-style-01 .txt p {
+    margin: 0;
+}
+
+/* wrapper調整 */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+}

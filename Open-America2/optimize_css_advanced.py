@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re
 import os
+import argparse
 from collections import defaultdict
 
 def extract_used_elements(html_file):
@@ -212,10 +213,14 @@ def rules_to_css(rules):
     return '\n\n'.join(css_parts)
 
 def main():
-    base_path = '/Users/shiroto/Desktop/YumeHouse-Website/Open-America2'
-    html_file = os.path.join(base_path, 'open2.html')
+    parser = argparse.ArgumentParser(description="Optimize CSS files based on HTML usage.")
+    parser.add_argument("html_file", help="Path to the HTML file")
+    parser.add_argument("css_files", nargs='+', help="Paths to CSS files")
+    args = parser.parse_args()
+
+    html_file = args.html_file
     
-    print("Extracting used elements from HTML...")
+    print(f"Extracting used elements from HTML file: {html_file}")
     used_classes, used_ids, used_elements = extract_used_elements(html_file)
     
     print(f"Found {len(used_classes)} unique classes")
@@ -233,21 +238,31 @@ a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-b
 @media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}
 .hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}"""]
     
-    css_files = [
-        ('styles/vendor/module_.min.css', os.path.join(base_path, 'styles/vendor/module_.min.css')),
-        ('styles/vendor/template_swiper-bundle.min.css', os.path.join(base_path, 'styles/vendor/template_swiper-bundle.min.css')),
-        ('styles/vendor/template_oh2022-style.min.css', os.path.join(base_path, 'styles/vendor/template_oh2022-style.min.css')),
-        ('styles/vendor/module_MV.min.css', os.path.join(base_path, 'styles/vendor/module_MV.min.css')),
-        ('styles/custom.css', os.path.join(base_path, 'styles/custom.css'))
-    ]
+    # Start with inline styles
+    optimized_css = ["""/* Critical inline styles from HTML */
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}
+.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}
+.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}
+.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}
+.hs-featured-image-link{border:0}
+.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}
+@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}
+.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}"""]
     
+    # Process CSS files from arguments
+    css_files_to_process = []
+    for css_file_path in args.css_files:
+        # Use the filename as the relative path for comments
+        relative_path = os.path.basename(css_file_path)
+        css_files_to_process.append((relative_path, css_file_path))
+
     total_original_size = 0
     total_stats = {'total_rules': 0, 'kept_rules': 0, 'removed_rules': 0}
     
     print("\nOptimizing CSS files...")
-    for relative_path, css_file in css_files:
+    for relative_path, css_file in css_files_to_process:
         if os.path.exists(css_file):
-            print(f"\nProcessing {relative_path}...")
+            print(f"\nProcessing {css_file}...")
             
             # Get original size
             with open(css_file, 'r', encoding='utf-8') as f:
@@ -270,7 +285,7 @@ a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-b
     
     # Save optimized CSS
     optimized_content = '\n'.join(optimized_css)
-    optimized_file = os.path.join(base_path, 'styles/optimized.css')
+    optimized_file = 'optimized.css'  # Save in the current working directory
     
     with open(optimized_file, 'w', encoding='utf-8') as f:
         f.write(optimized_content)
